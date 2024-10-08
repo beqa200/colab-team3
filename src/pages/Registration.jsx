@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import axios from "axios"
 function Registration   () {
   const [user, setUser] = useState({
@@ -74,7 +76,7 @@ function Registration   () {
         <button type="submit">Submit</button>
       </form>
       {error && <p style={{ color: "red" }}>{error}</p>}
-      <button>login</button>
+      <Link to={"/login"}>Login</Link>
     </>
   );
 }

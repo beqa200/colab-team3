@@ -1,6 +1,12 @@
 import React from 'react'
-
-export default function login() {
+import axios from 'axios';
+import { useState } from 'react';
+export default function Login() {
+  const [user, setUser] = useState({
+    email: "",
+    password: ""
+  });
+  const [error, setError] = useState("");
     const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
@@ -35,15 +41,17 @@ export default function login() {
       if(error === "") {
         axios.post("https:localhost:3001/login", {
           body: {
-            email,
-            password
+            email: user.email,
+            password: user.password
           }
         }).then((res) => {
-          token = res.token
+          const token = res.data.token
+          console.log('Login successful. Token:', token);
           // cookieshi sheinaxe
           // home pageze gadaamisamarte
         }).catch((err) => {
-
+          setError('Login failed. Please try again.');
+          console.log(err);
         })
       }
 
@@ -51,7 +59,7 @@ export default function login() {
   return (
     <div>
       login
-      <form action="">
+      
       <form onSubmit={handleSubmit}>
         <input
           name="email"
@@ -69,7 +77,7 @@ export default function login() {
         />
         <button type="submit">Submit</button>
       </form>
-      </form>
+      
     </div>
   )
 }
