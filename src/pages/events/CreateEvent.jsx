@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 
 const createEvent = async (newEvent) => {
-  const response = await axios.post("./data.json", newEvent); // Adjust your API endpoint as needed
+  const response = await axios.post("http://localhost:5000/api/events", newEvent); // Adjust your API endpoint as needed
   return response.data;
 };
 
@@ -19,15 +19,15 @@ function CreateEvent() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setNewEvent({ ...newEvent, [name]: value }); // Update the state on input change
+    setNewEvent({ ...newEvent, [name]: value }); 
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); 
 
     try {
-      await createEvent(newEvent); // Call createEvent on form submit
-      // Reset the form after successful creation
+      await createEvent(newEvent); 
+ 
       setNewEvent({
         eventName: "",
         eventDate: "",
@@ -39,7 +39,6 @@ function CreateEvent() {
       console.log("success")
     } catch (error) {
       console.error("Error creating event:", error);
-      // Optionally, you could set an error message in state to show to the user
     }
   };
 
