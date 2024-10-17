@@ -6,6 +6,7 @@ import CreateEvent from "./pages/events/CreateEvent";
 import UpdateEvent from "./pages/events/updateEvent";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Header from "./components/Header";
 
 const queryClient = new QueryClient();
 
@@ -34,8 +35,15 @@ export default function App() {
     }
   ]);
   return (
-    <QueryClientProvider client={queryClient}>
+    
+      <>
+      <Header/>
+       {/* <QueryClientProvider client={queryClient}>
       <RouterProvider router={router}></RouterProvider>
-    </QueryClientProvider>
+      
+    </QueryClientProvider> */}
+      </>
+    
+   
   );
 }
