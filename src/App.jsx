@@ -1,20 +1,27 @@
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+} from "react-router-dom";
 // import { QueryClientProvider } from 'react-query';
-import Header from './components/Header'
-import Login from './pages/Login'
-import Registration from './pages/Registration';
+import Header from "./components/Header";
+import Login from "./pages/Login";
+import Registration from "./pages/Registration";
 // import Events from './pages/events/'
 // import CreateEvent from './CreateEvent';
 // import UpdateEvent from './UpdateEvent';
-import Services from './components/Services';
-import Home from './components/Home';
-import Contact from './components/Contact';
+import Services from "./components/Services";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
+import StartPlanning from "./components/StartPlanning";
+import Events from "./components/Events";
 // Layout component that includes the Header
 function Layout() {
   return (
     <>
       <Header />
-      <Outlet /> {/* This will render the routed component below the Header */}
+      <Outlet />{" "}
+      {/* This will render the routed component below the Header */}
     </>
   );
 }
@@ -22,28 +29,33 @@ function Layout() {
 export default function App() {
   const router = createBrowserRouter([
     {
-      element: <Layout />,  // Layout wraps the routed components
+      element: <Layout />, // Layout wraps the routed components
       children: [
         {
-          path: '/login',
+          path: "/login",
           element: <Login />,
         },
         {
-          path:'/',
-          element:<Home/>
+          path: "/",
+          element: <Home />,
         },
         {
-          path: '/registration',
-          element: <Registration/>
+          path: "/registration",
+          element: <Registration />,
         },
         {
-          path:"/services",
-          element:<Services/>
+          path: "/services",
+          element: <Services />,
         },
         {
           path: "/contact",
-          element: <Contact/>
-        }
+          element: <Contact />,
+        },
+        {
+          path: "/startplanning",
+          element: <StartPlanning />,
+        },
+        { path: "/events", element: <Events /> },
         // {
         //   path: '/events',
         //   element: <Events />,
@@ -60,9 +72,5 @@ export default function App() {
     },
   ]);
 
-  return (
-   
-      <RouterProvider router={router} />
-    
-  );
+  return <RouterProvider router={router} />;
 }
