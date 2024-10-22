@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import google from '../assets/google.webp'
+import facebook from '../assets/facebook.jpg'
+import apple from '../assets/apple.png'
 
 import axios from "axios"
 function Registration   () {
@@ -56,27 +59,47 @@ function Registration   () {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>email</label>
-        <input
+    <div>
+      <h1>Login to event planner</h1>
+    </div>
+    <div className="w-[250px] flex justify-center items-center ml-2 border-black rounded-[40px] py-1.5 px-2.5" style={{ borderWidth: '1px' }}>
+  <img className="w-[25px] mr-2" src={google} alt="Google Icon" />
+  <h3 className="text-[17px]">continue with google</h3>
+</div>
+<div className="w-[250px] flex items-center ml-2 border-black rounded-[40px] py-1.5 px-2.5" style={{ borderWidth: '1px' }}>
+  <img className="w-[25px] mr-2" src={facebook} alt="Google Icon" />
+  <h3 className="text-[17px]">continue with facebook</h3>
+</div>
+<div className="w-[250px] flex items-center ml-2 border-black rounded-[40px] py-1.5 px-2.5 mb-5" style={{ borderWidth: '1px' }}>
+  <img className="w-[25px] mr-2" src={apple} alt="Google Icon" />
+  <h3 className="text-[17px]">continue with apple</h3>
+</div  >
+<hr className='mt-5' />
+      <form onSubmit={handleSubmit} className='flex flex-col'>
+        
+        <input  className='h-[40px] text-[20px]'
           name="email"
           onChange={inputValue}
           value={user.email}
           type="text"
           placeholder="Enter email"
         />
-        <label >password</label>
-        <input
+        
+        <input  className='h-[40px] text-[20px] mt-6 '
           name="password"
           onChange={inputValue}
           value={user.password}
           type="password"
           placeholder="Enter password"
         />
-        <button type="submit">Submit</button>
+        
       </form>
+      <div >
+      <button className="w-[250px] flex items-center ml-2 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto" style={{ borderWidth: '1px' }} type="submit">Log in</button>
+
+      </div>
       {error && <p style={{ color: "red" }}>{error}</p>}
-      <Link to={"/login"}>Login</Link>
+      {/* <Link to={"/login"}>Login</Link> */}
     </>
   );
 }
