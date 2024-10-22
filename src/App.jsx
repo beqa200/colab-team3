@@ -1,8 +1,25 @@
+import React from "react";
+import Login from "./pages/Login";
+import Registration from "./pages/registration";
+import Events from "./pages/events/usersEvents";
+import CreateEvent from "./pages/events/CreateEvent";
+import UpdateEvent from "./pages/events/updateEvent";
+import EventDetails from "./pages/events/EventDetails"; // Import EventDetails component
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
+
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 // import { QueryClientProvider } from 'react-query';
 import Header from './components/Header'
-import Login from './pages/Login'
-import Registration from './pages/Registration';
 // import Events from './pages/events/'
 // import CreateEvent from './CreateEvent';
 // import UpdateEvent from './UpdateEvent';
@@ -18,6 +35,7 @@ function Layout() {
     </>
   );
 }
+
 
 export default function App() {
   const router = createBrowserRouter([
@@ -56,9 +74,27 @@ export default function App() {
         //   path: '/updateEvent/:id',
         //   element: <UpdateEvent />,
         // },
-      ],
+      
+    {
+      path: "/events",
+      element: <Events />,
     },
+    {
+      path: "/createEvent",
+      element: <CreateEvent />,
+    },
+    {
+      path: "/updateEvent/:id",
+      element: <UpdateEvent />,
+    },
+    {
+      path: "/event/:id",
+      element: <EventDetails />,
+    },
+  ]}
   ]);
+
+
 
   return (
    
