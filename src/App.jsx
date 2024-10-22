@@ -4,11 +4,18 @@ import Registration from "./pages/registration";
 import Events from "./pages/events/usersEvents";
 import CreateEvent from "./pages/events/CreateEvent";
 import UpdateEvent from "./pages/events/updateEvent";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import EventDetails from "./pages/events/EventDetails"; // Import EventDetails component
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
-
 
 export default function App() {
   const router = createBrowserRouter([
@@ -26,16 +33,21 @@ export default function App() {
     },
     {
       path: "/createEvent",
-      element: <CreateEvent/>
+      element: <CreateEvent />,
     },
     {
       path: "/updateEvent/:id",
-      element: <UpdateEvent/>
-    }
+      element: <UpdateEvent />,
+    },
+    {
+      path: "/event/:id",
+      element: <EventDetails />,
+    },
   ]);
+
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router} />
     </QueryClientProvider>
   );
 }
