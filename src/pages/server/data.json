@@ -1,29 +1,39 @@
 [
-  {
-    "eventName": "asdasdasd",
-    "eventDate": "2222-02-22",
-    "hours": "14:22",
-    "location": "22",
-    "description": "2222",
-    "guestsAmount": "02",
-    "id": 5
-  },
-  {
-    "eventName": "sadsa",
-    "eventDate": "0002-02-22",
-    "hours": "14:22",
-    "location": "222",
-    "description": "22",
-    "guestsAmount": "022",
-    "id": 6
-  },
-  {
-    "eventName": "21312",
-    "eventDate": "0002-02-22",
-    "hours": "14:13",
-    "location": "21321",
-    "description": "213",
-    "guestsAmount": "0222",
-    "id": 7
-  }
-]
+    {
+      "id": 1,
+      "eventName": "New Year Celebration",
+      "eventDate": "2024-01-01",
+      "hours": "20:00",
+      "location": "Central Park",
+      "description": "Celebrate the new year with fireworks and music.",
+      "guestsAmount": 100
+    },
+    {
+      "id": 2,
+      "eventName": "Company Meeting",
+      "eventDate": "2024-02-15",
+      "hours": "10:00",
+      "location": "Headquarters Conference Room",
+      "description": "Monthly team meeting to discuss goals and achievements.",
+      "guestsAmount": 15
+    },
+    {
+      "id": 3,
+      "eventName": "Conference",
+      "eventDate": "2024-03-22",
+      "hours": "09:00",
+      "location": "Downtown Convention Center",
+      "description": "Annual industry conference with various speakers and workshops.",
+      "guestsAmount": 250
+    },
+    {
+      "id": 4,
+      "eventName": "Birthday Party",
+      "eventDate": "2024-04-10",
+      "hours": "18:00",
+      "location": "John's House",
+      "description": "A fun birthday celebration with friends and family.",
+      "guestsAmount": 20
+    }
+  ]
+
