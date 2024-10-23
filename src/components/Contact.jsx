@@ -25,7 +25,7 @@ export default function Contact() {
           <div className="relative">
             <label
               htmlFor="name"
-              className="text-lg md:text-xl lg:text-2xl"
+              className="text-lg md:text-xl lg:text-2xl text-[#a2724e]"
             >
               Full Name
             </label>
@@ -41,7 +41,7 @@ export default function Contact() {
           <div className="relative">
             <label
               htmlFor="email"
-              className="text-lg md:text-xl lg:text-2xl"
+              className="text-lg md:text-xl lg:text-2xl text-[#a2724e]"
             >
               Email
             </label>
@@ -57,7 +57,7 @@ export default function Contact() {
           <div className="relative">
             <label
               htmlFor="phone"
-              className="text-lg md:text-xl lg:text-2xl"
+              className="text-lg md:text-xl lg:text-2xl text-[#a2724e]"
             >
               Phone Number
             </label>
