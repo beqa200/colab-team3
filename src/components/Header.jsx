@@ -23,7 +23,7 @@ export default function Header() {
       <div className="flex md:justify-center">
         <img
           onClick={() => navigate("/")}
-          className="w-[250px] cursor-pointer "
+          className="w-[150px] cursor-pointer ml-[50px] lg:ml-[200px] "
           src={logo}
           alt="Logo"
         />
@@ -68,7 +68,7 @@ export default function Header() {
 
       {/* Navigation Section */}
       <div
-        className={`mt-4 flex flex-col items-center space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4 ${
+        className={` mt-4 flex flex-col items-center space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4 lg:mr-[200px]  ${
           isOpen ? "block" : "hidden lg:flex"
         }`}
       >
@@ -77,19 +77,19 @@ export default function Header() {
         {/* <Link to={"/home"} className='text-[#a2724e]'>home</Link> */}
         <Link
           to={"/services"}
-          className="text-[#a2724e]"
+          className="text-[#a2724e] text-[20px] font-poppins transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[20px]"
         >
           services
         </Link>
-        <Link to={"/events"}>Events</Link>
+        <Link to={"/events"} className="font-poppins text-[#a2724e] text-[20px] transition duration-300   hover:brightness-75  ease-in-out   lg:pr-[30px] ">Events</Link>
         <Link
           to={"/login"}
-          className="text-[#a2724e]"
+          className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
         >
           sign up
         </Link>
         <button
-          className="text-[#a2724e]"
+          className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
           onClick={() =>
             navigate("/registration")
           }
@@ -98,14 +98,14 @@ export default function Header() {
         </button>
 
         <Link
-          className="text-[#a2724e]"
+          className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
           to={"/contact"}
         >
           contact
         </Link>
         <Link
           to={"/startplanning"}
-          className="text-[#a2724e]"
+          className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
         >
           start planning
         </Link>
