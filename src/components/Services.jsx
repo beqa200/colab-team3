@@ -60,7 +60,7 @@ export default function Services() {
   </div>
   <div className="w-full md:w-1/2 h-full flex flex-col justify-between p-[20px]">
     <div>
-      <h1 className="pb-[10px] xl:pt-[15px] lg:text-[40px] text-[25px] lg:pb-[10px] font-bold text-[#a2724e] font-poppins   ">Birthday Party</h1>
+      <h1 className="pb-[10px] xl:pt-[15px] lg:text-[40px] text-[25px] lg:pb-[10px] font-bold text-[#a2724e] font-poppins   ">wedding Party</h1>
     </div>
     <div>
       <p className='pb-[10px] xl:pt-[20px] xl:text-[23px] lg:pr-[50px] lg:text-[17px] lg:pb-[30px] font-serif text-[#a2724e]'>
@@ -87,7 +87,7 @@ export default function Services() {
   </div>
   <div className="w-full md:w-1/2 h-full flex flex-col justify-between p-[20px]">
     <div>
-      <h1 className="pb-[10px] xl:pt-[15px] lg:text-[40px] text-[25px] lg:pb-[10px] font-bold text-[#a2724e] font-poppins   ">Birthday Party</h1>
+      <h1 className="pb-[10px] xl:pt-[15px] lg:text-[40px] text-[25px] lg:pb-[10px] font-bold text-[#a2724e] font-poppins   ">annniversary Party</h1>
     </div>
     <div>
       <p className='pb-[10px] xl:pt-[20px] xl:text-[23px] lg:pr-[50px] lg:text-[17px] lg:pb-[30px] font-serif text-[#a2724e]'>
@@ -115,7 +115,7 @@ export default function Services() {
 
 <div className="w-full md:w-1/2 h-full flex flex-col justify-between p-[20px ]">
     <div>
-      <h1 className="pb-[10px] xl:pt-[15px] lg:text-[40px] text-[25px] lg:pb-[10px] font-bold text-[#a2724e] font-poppins   ">Birthday Party</h1>
+      <h1 className="pb-[10px] xl:pt-[15px] lg:text-[40px] text-[25px] lg:pb-[10px] font-bold text-[#a2724e] font-poppins   ">conferrence </h1>
     </div>
     <div>
       <p className='pb-[10px] xl:pt-[20px] xl:text-[23px] lg:pr-[50px] lg:text-[17px] lg:pb-[30px] font-serif text-[#a2724e]'>
