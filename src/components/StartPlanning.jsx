@@ -50,7 +50,7 @@ function CreateEvent() {
   return (
     <div className="p-4">
       <div className="text-center mb-6 hidden md:block">
-        <h2 className="font-bold text-[25px] mt-[30px]">
+        <h2 className="font-bold text-[25px] mt-[30px]  text-[#a2724e] font-poppins">
           Contact Us
         </h2>
       </div>
@@ -61,10 +61,10 @@ function CreateEvent() {
             className="w-full rounded-[20px] shadow-md"
             alt="Event"
           />
-          <p className="mt-[20px]">
+          <p className="mt-[20px] text-[#a2724e] font-poppins">
             Eventplanner@gmail.com
           </p>
-          <p className="mt-[20px]">
+          <p className="mt-[20px] text-[#a2724e] font-poppins">
             +995 555 36 36 36{" "}
           </p>
 
@@ -82,7 +82,7 @@ function CreateEvent() {
           <div className="relative">
             <label
               htmlFor="eventName"
-              className="text-lg"
+              className="text-lg text-[#a2724e] font-bold "
             >
               Event Name
             </label>
@@ -91,16 +91,16 @@ function CreateEvent() {
               name="eventName"
               value={newEvent.eventName}
               onChange={handleInputChange}
-              placeholder="Event Name"
+              placeholder="Event Name" 
               required
-              className="block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+              className="  placeholder-[#a2724e] text-[#a2724e] block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
             />
           </div>
 
           <div className="relative">
             <label
               htmlFor="eventDate"
-              className="text-lg"
+              className="text-lg text-[#a2724e] font-bold  orange-700"
             >
               Event Date
             </label>
@@ -110,14 +110,14 @@ function CreateEvent() {
               value={newEvent.eventDate}
               onChange={handleInputChange}
               required
-              className="block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+              className="  text-[#a2724e] block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
             />
           </div>
 
           <div className="relative">
             <label
               htmlFor="hours"
-              className="text-lg"
+              className="text-lg text-[#a2724e] font-bold "
             >
               Hours
             </label>
@@ -127,14 +127,14 @@ function CreateEvent() {
               value={newEvent.hours}
               onChange={handleInputChange}
               required
-              className="block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+              className="text-[#a2724e]   block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
             />
           </div>
 
           <div className="relative">
             <label
               htmlFor="location"
-              className="text-lg"
+              className="text-lg text-[#a2724e] font-bold"
             >
               Location
             </label>
@@ -145,14 +145,14 @@ function CreateEvent() {
               onChange={handleInputChange}
               placeholder="Location"
               required
-              className="block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+              className="placeholder-[#a2724e] text-[#a2724e]  block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
             />
           </div>
 
           <div className="relative">
             <label
               htmlFor="description"
-              className="text-lg"
+              className="text-lg text-[#a2724e] font-bold "
             >
               Description
             </label>
@@ -163,14 +163,14 @@ function CreateEvent() {
               onChange={handleInputChange}
               placeholder="Description"
               required
-              className="block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+              className=" placeholder-[#a2724e] text-[#a2724e] block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
             />
           </div>
 
           <div className="relative">
             <label
               htmlFor="guestsAmount"
-              className="text-lg"
+              className="text-lg text-[#a2724e] font-bold  "
             >
               Guests Amount
             </label>
@@ -181,13 +181,13 @@ function CreateEvent() {
               onChange={handleInputChange}
               placeholder="Guests Amount"
               required
-              className="block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+              className=" placeholder-[#a2724e] text-[#a2724e] block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
             />
           </div>
 
           <button
             type="submit"
-            className="bg-blue-500 text-white py-3 px-4 rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+            className="bg-orange-700 text-white py-3 px-4 rounded-lg shadow-md transition duration-200 hover:bg-[#a2724e]"
           >
             Create Event
           </button>
