@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <div className="p-4">
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold md:text-3xl lg:text-4xl xl:text-[40px]">
+        <h2 className="text-2xl font-bold  md:text-3xl lg:text-4xl xl:text-[40px] text-[#a2724e]">
           Contact Us
         </h2>
       </div>
@@ -24,7 +24,7 @@ export default function Contact() {
           <div className="relative">
             <label
               htmlFor="name"
-              className="text-lg md:text-[20px] lg:text-xl xl:text-[24px]"
+              className="text-lg md:text-[20px] lg:text-xl xl:text-[24px] text-[#a2724e]"
             >
               Full Name
             </label>
@@ -32,7 +32,7 @@ export default function Contact() {
               type="text"
               id="name"
               placeholder="Your name here"
-              className="block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+              className="block text-gray-500  w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-[#a2724e] transition-colors duration-300"
               required
             />
           </div>
@@ -40,7 +40,7 @@ export default function Contact() {
           <div className="relative">
             <label
               htmlFor="email"
-              className="text-lg md:text-[20px] lg:text-xl xl:text-[24px]"
+              className="  text-lg md:text-[20px] lg:text-xl xl:text-[24px] text-[#a2724e]"
             >
               Email
             </label>
@@ -48,7 +48,7 @@ export default function Contact() {
               type="email"
               id="email"
               placeholder="Your email here"
-              className="block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+              className="block w-full text-gray-500  bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
               required
             />
           </div>
@@ -56,7 +56,7 @@ export default function Contact() {
           <div className="relative">
             <label
               htmlFor="phone"
-              className="text-lg md:text-[20px] lg:text-xl xl:text-[24px]"
+              className="text-lg md:text-[20px]  lg:text-xl xl:text-[24px] text-[#a2724e]"
             >
               Phone Number
             </label>
@@ -64,14 +64,14 @@ export default function Contact() {
               type="tel"
               id="phone"
               placeholder="Your phone number here"
-              className="block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
+              className="block w-full bg-transparent border-b-2 border-gray-300 text-gray-500 focus:outline-none focus:border-blue-500 transition-colors duration-300"
               required
             />
           </div>
 
           <button
             type="submit"
-            className="bg-blue-500 text-white py-2 md:py-3 xl:py-4 rounded-lg hover:bg-blue-600 transition duration-300"
+            className="bg-[#a2724e] text-white py-2 md:py-3 xl:py-4 rounded-lg  transition duration-300  hover:brightness-90 "
           >
             Submit
           </button>

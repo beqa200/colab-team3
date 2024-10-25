@@ -33,7 +33,7 @@ export default function Home() {
     <h1 className="text-2xl font-bold text-[#a2724e] font-poppins p-[30px]">Dream it</h1>
     <h4 className="text-lg text-gray-500 font-poppins pl-[50px]">What sparks your excitement? Choose your wedding destination.</h4>
     <img className="mx-auto p-[80px]" src={conferrencePoto} alt="Inspiration" />
-    <Link to={"/services"} className=" font-poppins mt-[30px] p-[20px] text-xl rounded-full bg-orange-500 text-white transition duration-300 hover:bg-[#a2724e] ">
+    <Link to={"/services"} className=" font-poppins mt-[30px] p-[20px] text-xl rounded-full bg-orange-700 text-white transition duration-300 hover:bg-[#a2724e] ">
       Get creative
     </Link>
   </div>
@@ -42,7 +42,7 @@ export default function Home() {
     <h1 className="text-2xl font-bold text-[#a2724e] font-poppins p-[30px] ">Book it</h1>
     <h4 className="text-lg text-gray-500 font-poppins">Find your perfect wedding package and <br /> splurge options.</h4>
     <img className="mx-auto p-[80px] mt-[30px] " src={birthdayPhoto} alt="Inspiration" />
-    <Link to={"/services"} className="font-poppins mt-[30px] p-[20px] text-xl rounded-full bg-orange-500 text-white transition duration-300 hover:bg-[#a2724e]">
+    <Link to={"/services"} className="font-poppins mt-[30px] p-[20px] text-xl rounded-full bg-orange-700 text-white transition duration-300 hover:bg-[#a2724e]">
   Get creative
 </Link>
   </div>
@@ -51,7 +51,7 @@ export default function Home() {
     <h1 className="text-2xl font-bold text-[#a2724e] font-poppins p-[30px]">Love it</h1>
     <h4 className="text-lg text-gray-500 font-poppins">It's time to say Yes, “I Do!”</h4>
     <img className="mx-auto p-[80px]  " src={birthdayPhoto} alt="Inspiration" />
-    <Link to={"/services"} className=" font-poppins mt-[30px] p-[20px] text-xl rounded-full bg-orange-500 text-white transition duration-300 hover:bg-[#a2724e] ">
+    <Link to={"/services"} className=" font-poppins mt-[30px] p-[20px] text-xl rounded-full bg-orange-700 text-white transition duration-300 hover:bg-[#a2724e] ">
       Get creative
     </Link>  
   </div>

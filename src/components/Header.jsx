@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.webp";
+import loho4 from "../assets/loho4.png";
+
+// import loogo from '../assets/loogo.webp'
+<assets />
 import {
   Link,
   useNavigate,
@@ -24,7 +28,7 @@ export default function Header() {
         <img
           onClick={() => navigate("/")}
           className="w-[150px] cursor-pointer ml-[50px] lg:ml-[200px] "
-          src={logo}
+          src={loho4}
           alt="Logo"
         />
       </div>
