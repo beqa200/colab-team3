@@ -1,10 +1,14 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
+
     <div>
       <div>
         <hr  />
@@ -28,16 +32,40 @@ export default function Footer() {
           <Link className='text-[#a2724e] text-[20px] cursor-pointer p-[5px]'>Home</Link>
           <Link className='text-[#a2724e] text-[20px] cursor-pointer'>Events</Link>
           <Link className='text-[#a2724e] text-[20px] cursor-pointer p-[5px]'>Services</Link>
-        </div>
-        <div className='flex flex-col text-center ml-[30px]  '>
-          <Link className='text-[#a2724e] text-[20px] cursor-pointer p-[5px]'>Contact</Link>
-          <Link className='text-[#a2724e] text-[20px] cursor-pointer '>Login</Link>
 
-          <Link className='text-[#a2724e] text-[20px] cursor-pointer p-[5px]'>Start planning</Link>
+        </div>
+
+        <div className="lg:w-1/2 flex flex-col justify-center items-center justify-center mt-10 lg:mt-[100px] lg:ml-[300px] lg:text-right">
+          <div className="flex flex-col lg:flex-row lg:space-x-10 lg:justify-center items-center justify-center">
+            <div className="flex flex-col space-y-3 mb-6 lg:mb-0">
+              <Link className="text-[#a2724e] text-lg hover:underline font-poppins">
+                Home
+              </Link>
+              <Link className="text-[#a2724e] text-lg hover:underline font-poppins">
+                About
+              </Link>
+              <Link className="text-[#a2724e] text-lg hover:underline font-poppins">
+                Packages
+              </Link>
+            </div>
+            <div className="flex flex-col space-y-3">
+              <Link className="text-[#a2724e] text-lg hover:underline font-poppins">
+                Inspiration
+              </Link>
+              <Link className="text-[#a2724e] text-lg hover:underline font-poppins">
+                Blog
+              </Link>
+              <Link className="text-[#a2724e] text-lg hover:underline font-poppins">
+                Contact
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
-      
 
+      <div className="text-center mt-10 text-gray-600 text-sm">
+        © THE EFFORTLESS WEDDING 2024
+      </div>
     </div>
-  )
+  );
 }
