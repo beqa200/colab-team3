@@ -50,8 +50,8 @@ function CreateEvent() {
   return (
     <div className="p-4">
       <div className="text-center mb-6 hidden md:block">
-        <h2 className="font-bold text-[25px] mt-[30px]  text-[#a2724e] font-poppins">
-          Contact Us
+        <h2 className="text-2xl font-bold font-libre  md:text-3xl lg:text-4xl xl:text-[40px] text-[#a2724e]">
+          Start  Planning
         </h2>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-[50px]">

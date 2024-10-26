@@ -8,7 +8,9 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
-        grvb: ["Great Vibes", "cursive"]
+        grvb: ["Great Vibes", "cursive"],
+        bodoni: ["Bodoni Moda", "serif"],
+        libre: ["Libre Baskerville", "serif"]
       },
     },
   },

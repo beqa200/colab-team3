@@ -15,7 +15,7 @@ export default function Home() {
   <img className=" p-[50px] mb-[150px] h-[500px] w-[1300px]" src={mainPoto} alt="Wedding" />
 </div>
         <div className="flex flex-col justify-center">
-        <h2 class=" font-grvb text-6xl text-[#a2724e]  text-center whitespace-pre-wrap transition ease duration-[1200ms] delay-[183ms] preScale scaleIn">
+        <h2 class=" font-libre text-6xl text-[#a2724e]  text-center whitespace-pre-wrap transition ease duration-[1200ms] delay-[183ms] preScale scaleIn">
   Three Easy Steps
 </h2>
           <img className="w-[500px] mx-auto" src={fotoli} alt="" />
@@ -71,7 +71,7 @@ export default function Home() {
   </div>
 </div>
 <div className="text-center">
-  <h1 className="text-6xl  text-[#a2724e] mt-[70px] font-grvb ">Our packages </h1>
+  <h1 className="text-6xl  text-[#a2724e] mt-[70px] font-libre   ">Our packages </h1>
   <p class="font-poppins mt-[30px] text-gray-500 leading-[35px] text-center whitespace-pre-wrap transition ease duration-[1200ms] delay-[200ms] preFade fadeIn p-[30px] lg:px-[100px]">Choose your package and we'll help you get married simply and affordably. We specialize in creating weddings that you didn't even dare dream of, or know you wanted, so you can have an extraordinary day! We offer beautiful locations and fully planned tiny weddings.  We'll help you choose your beautiful venue, and match you up with our fully vetted family of vendors to create your all inclusive wedding dream team.  It's time to get excited about your wedding again!</p>
 </div>
 

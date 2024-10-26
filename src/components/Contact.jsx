@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <div className="p-4">
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold  md:text-3xl lg:text-4xl xl:text-[40px] text-[#a2724e]">
+        <h2 className="text-2xl font-bold font-libre  md:text-3xl lg:text-4xl xl:text-[40px] text-[#a2724e]">
           Contact Us
         </h2>
       </div>
