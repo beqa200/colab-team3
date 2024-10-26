@@ -10,7 +10,7 @@ export default function Footer() {
         <hr  />
       </div>
       <div>
-      <h1 className="text-5xl text-center   text-[#a2724e] mt-[70px] font-grvb">
+      <h1 className="text-5xl text-center   text-[#a2724e] mt-[70px] font-libre">
   The Effortless Events
 </h1>
       </div>

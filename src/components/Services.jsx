@@ -4,6 +4,9 @@ import image3 from '../assets/image3.jpg'
 export default function Services() {
   return (
     <div className='text-center'>
+      <div>
+        <h1 className='text-2xl font-bold font-libre  md:text-3xl lg:text-4xl xl:text-[40px] text-[#a2724e]'>Services</h1>
+      </div>
 
       <div  >
         <h1 className='font-poppins mt-[30px] text-gray-500 leading-[35px] text-center whitespace-pre-wrap transition ease duration-[1200ms] delay-[200ms] preFade fadeIn p-[30px] lg:px-[100px]   '>
