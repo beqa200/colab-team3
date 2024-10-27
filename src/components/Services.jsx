@@ -1,5 +1,6 @@
 import React from 'react'
 import image3 from '../assets/image3.jpg'
+import { Link } from 'react-router-dom'
 
 export default function Services() {
   return (
@@ -49,7 +50,7 @@ export default function Services() {
       </p>
     </div>
     <div>
-      <button className=' font-poppins   p-[20px] text-xl rounded-full bg-orange-700 text-white w-[200px] ' >Start Planning</button>
+    <Link className=' font-poppins   p-[20px] text-xl rounded-full bg-orange-700 text-white w-[200px] ' to={"/startplanning"}> start planning</Link>
     </div>
   </div>
 </div>
@@ -76,7 +77,10 @@ export default function Services() {
       </p>
     </div>
     <div>
-      <button className=' font-poppins   p-[20px] text-xl rounded-full bg-orange-700 text-white w-[200px] ' >Start Planning</button>
+   
+    <Link className=' font-poppins   p-[20px] text-xl rounded-full bg-orange-700 text-white w-[200px] ' to={"/startplanning"}> start planning</Link>
+    
+      {/* <button className=' font-poppins   p-[20px] text-xl rounded-full bg-orange-700 text-white w-[200px] ' >Start Planning</button> */}
     </div>
   </div>
 </div>
@@ -103,7 +107,7 @@ export default function Services() {
       </p>
     </div>
     <div>
-      <button className=' font-poppins   p-[20px] text-xl rounded-full bg-orange-700 text-white w-[200px] ' >Start Planning</button>
+    <Link className=' font-poppins   p-[20px] text-xl rounded-full bg-orange-700 text-white w-[200px] ' to={"/startplanning"}> start planning</Link>
     </div>
   </div>
 </div>
@@ -131,7 +135,7 @@ export default function Services() {
       </p>
     </div>
     <div>
-      <button className=' font-poppins   p-[20px] text-xl rounded-full bg-orange-700 text-white w-[200px] ' >Start Planning</button>
+    <Link className=' font-poppins   p-[20px] text-xl rounded-full bg-orange-700 text-white w-[200px] ' to={"/startplanning"}> start planning</Link>
     </div>
   </div>
 </div>
