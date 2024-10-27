@@ -90,16 +90,8 @@ export default function Header() {
           to={"/login"}
           className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
         >
-          sign up
+          sign in
         </Link>
-        <button
-          className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
-          onClick={() =>
-            navigate("/registration")
-          }
-        >
-          sign in{" "}
-        </button>
 
         <Link
           className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
