@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const createEvent = async (newEvent) => {
   const response = await axios.post(
@@ -53,7 +54,8 @@ function CreateEvent() {
         <h2 className="text-2xl font-bold font-libre  md:text-3xl lg:text-4xl xl:text-[40px] text-[#a2724e]">
           Start  Planning
         </h2>
-      </div>
+        
+      </div> 
       <div className="flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-[50px]">
         <div className="w-full lg:w-[45%] md:w-[50%] md:mt-[px] xl:mt-[40px]">
           <img
