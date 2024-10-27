@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        grvb: ["Great Vibes", "cursive"],
+        bodoni: ["Bodoni Moda", "serif"],
+        libre: ["Libre Baskerville", "serif"]
+      },
+    },
   },
   plugins: [],
 }

@@ -15,12 +15,14 @@ import Home from "./components/Home";
 import Contact from "./components/Contact";
 import StartPlanning from "./components/StartPlanning";
 import Events from "./components/Events";
+import Footer from "./components/Footer";
 // Layout component that includes the Header
 function Layout() {
   return (
     <>
       <Header />
       <Outlet />{" "}
+      <Footer/>
       {/* This will render the routed component below the Header */}
     </>
   );
