@@ -86,16 +86,8 @@ export default function Header() {
           to={"/login"}
           className="text-[#a2724e]"
         >
-          sign up
+          sign in
         </Link>
-        <button
-          className="text-[#a2724e]"
-          onClick={() =>
-            navigate("/registration")
-          }
-        >
-          sign in{" "}
-        </button>
 
         <Link
           className="text-[#a2724e]"
