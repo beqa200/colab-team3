@@ -84,7 +84,7 @@ export default function Header() {
           to={"/services"}
           className="text-[#a2724e] text-[20px] font-poppins transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[20px]"
         >
-          services
+          Services
         </Link>
         <Link
           to={"/events"}
@@ -96,20 +96,20 @@ export default function Header() {
           to={"/login"}
           className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
         >
-          sign in
+          Sign In
         </Link>
 
         <Link
           className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
           to={"/contact"}
         >
-          contact
+          Contact
         </Link>
         <Link
           to={"/startplanning"}
           className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
         >
-          start planning
+          Start Planning
         </Link>
       </div>
     </header>

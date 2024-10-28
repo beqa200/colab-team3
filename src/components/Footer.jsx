@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="flex flex-col lg:flex-row justify-between items-start">
         {/* Left Section: Title, Description, and Social Icons */}
         <div className="lg:w-1/2 text-left lg:text-left text-center">
-          <h1 className="text-[40px] text-[#63564E] font-poppins font-bold">
+          <h1 className="text-[40px] text-[#a2724e] font-poppins font-bold">
             The Effortless Wedding
           </h1>
           <p className="text-gray-600 mt-4 leading-relaxed font-light text-[20px] font-poppins">
@@ -37,7 +37,7 @@ export default function Footer() {
             />
           </div>
         </div>
-        <div className="lg:w-1/2 flex   items-center text-center  mt-10 lg:mt-[100px] lg:ml-[300px] lg:text-right">
+        <div className="lg:w-1/2 flex flex-col justify-center items-center justify-center mt-10 lg:mt-[100px] lg:ml-[300px] lg:text-right">
           <div className="flex flex-col lg:flex-row lg:space-x-10 lg:justify-center items-center justify-center">
             <div className="flex flex-col space-y-3 mb-6 lg:mb-0 items-center ">
               <Link className="text-[#a2724e] text-lg hover:underline font-poppins text-center w-[100%]">
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="text-center mt-10 text-gray-600 text-sm">
+      <div className="text-center mt-10 text-[#a2724e] text-sm">
         © THE EFFORTLESS WEDDING 2024
       </div>
     </div>

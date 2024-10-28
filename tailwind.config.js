@@ -12,6 +12,9 @@ export default {
         bodoni: ["Bodoni Moda", "serif"],
         libre: ["Libre Baskerville", "serif"]
       },
+      colors: {
+        customBrown: "#a2724e"
+      }
     },
   },
   plugins: [],
