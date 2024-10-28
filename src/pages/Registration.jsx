@@ -65,73 +65,76 @@ function Registration() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row p-4">
-      <img src={eventImg} className="w-full md:w-1/2" />
-      <div class="flex flex-col items-center  h-screen w-full h-full p-6 gap-4">
-        <div>
-          <h1 class="text-1.5xl font-extrabold text-left mb-6 leading-snug tracking-wide text-[#a2724e]">
-            Sign Up to event planner
-          </h1>
-        </div>
-        <div
-          className="w-[250px] flex justify-center items-center ml-2 border-black rounded-[40px] py-1.5 px-2.5"
-          style={{ borderWidth: "1px" }}
-        >
-          <img className="w-[25px] mr-2" src={google} alt="Google Icon" />
-          <h3 className="text-[17px]">continue with google</h3>
-        </div>
-        <div
-          className="w-[250px] flex items-center ml-2 border-black rounded-[40px] py-1.5 px-2.5 justify-center "
-          style={{ borderWidth: "1px" }}
-        >
-          <img className="w-[25px] mr-2" src={facebook} alt="Google Icon" />
-          <h3 className="text-[17px]">continue with facebook</h3>
-        </div>
-        <div
-          className="w-[250px] flex items-center ml-2 border-black rounded-[40px] py-1.5 px-2.5 mb-5 justify-center "
-          style={{ borderWidth: "1px" }}
-        >
-          <img className="w-[25px] mr-2" src={apple} alt="Google Icon" />
-          <h3 className="text-[17px]">continue with apple</h3>
-        </div>
-        <hr className="mt-5" />
-        <form onSubmit={handleSubmit} className="flex flex-col">
-          <input
-            className="h-[40px] text-[20px] border border-gray-300 rounded-lg p-2 text-[#a2724e]"
-            name="email"
-            onChange={inputValue}
-            value={user.email}
-            type="text"
-            placeholder="Enter email"
+    <div className="text-center">
+      <div>
+        <h1 className="text-2xl font-bold font-libre mt-[15px] md:text-3xl lg:text-4xl xl:text-[40px] text-[#a2724e]">
+          Sign Up To Event Planner
+        </h1>
+      </div>
+      <div className="flex flex-col justify-center items-center md:flex-row">
+        <div className="mt-[20px]">
+          <img
+            src={eventImg}
+            className="w-[250px] xl:w-[500px]   lg:w-[500px] lg:h-[400px] md:w-[350px] mt-[50px] mr-[100px] md:h-[310px] object-cover "
           />
-
-          <input
-            className="h-[40px] text-[20px] mt-6 border border-gray-300 rounded-lg p-2 text-[#a2724e]"
+        </div>
+        <div className="flex flex-col items-center mt-[60px]">
+          <div
+            className="w-[250px] lg:mb-[30px] flex justify-center items-center ml-2 mb-3 border-customBrown rounded-[40px] py-1.5 px-2.5"
             style={{ borderWidth: "1px" }}
-            name="password"
-            onChange={inputValue}
-            value={user.password}
-            type="password"
-            placeholder="Enter password"
-          />
-        </form>
-        <div>
-          <button
-            className="w-[250px] flex items-center justify-center ml-2 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto text-[#a2724e]"
-            style={{ borderWidth: "1px", border: "2px solid #a2724e" }}
-            type="submit"
           >
-            Log in
-          </button>
+            <img className="w-[25px] mr-2" src={google} alt="Google Icon" />
+            <h3 className="text-[17px]">continue with google</h3>
+          </div>
+          <div
+            className="w-[250px] lg:mb-[10px] flex items-center justify-center ml-2 border-customBrown rounded-[40px] py-1.5 px-2.5"
+            style={{ borderWidth: "1px" }}
+          >
+            <img className="w-[25px] mr-2" src={facebook} alt="Facebook Icon" />
+            <h3 className="text-[17px]">continue with facebook</h3>
+          </div>
+          
+          <hr className="mt-5" />
+          <form onSubmit={handleSubmit} className="flex flex-col">
+            <input
+              className="h-[40px] lg:mb-[10px] text-[20px] border border-customBrown rounded-lg p-2 text-[#a2724e]"
+              name="email"
+              onChange={inputValue}
+              value={user.email}
+              type="text"
+              placeholder="Enter email"
+            />
+            <input
+              className="h-[40px] lg:mb-[30px] text-[20px] mt-6 border border-customBrown rounded-lg p-2 text-[#a2724e]"
+              name="password"
+              onChange={inputValue}
+              value={user.password}
+              type="password"
+              placeholder="Enter password"
+            />
+          </form>
+          <div>
+            <button
+              className="w-[250px] flex items-center justify-center ml-2 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto text-[#a2724e]"
+              style={{
+                borderWidth: "2px",
+                border: "2px solid #a2724e",
+                marginTop: "15px",
+              }}
+              type="submit"
+            >
+              Sign Up
+            </button>
+          </div>
+          {/* {error && <p  className="text-red-600" >{error}</p>} */}
+          <p>
+            {" "}
+            You already have an account?{" "}
+            <Link to={"/login"} style={{ color: " #a2724e" }}>
+              Log in
+            </Link>
+          </p>
         </div>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        <p>
-          {" "}
-          You already have acount?{" "}
-          <Link to={"/login"} style={{ color: " #a2724e" }}>
-            Log in
-          </Link>
-        </p>
       </div>
     </div>
   );
