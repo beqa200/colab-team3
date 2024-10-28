@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.webp";
+// import logo from "../assets/logo.webp";
 import loho4 from "../assets/loho4.png";
+import logo from "../assets/lg-10.png";
 
 // import loogo from '../assets/loogo.webp'
-<assets />
+<assets />;
 import {
   Link,
   useNavigate,
@@ -28,7 +29,7 @@ export default function Header() {
         <img
           onClick={() => navigate("/")}
           className="w-[150px] cursor-pointer ml-[50px] lg:ml-[200px] "
-          src={loho4}
+          src={logo}
           alt="Logo"
         />
       </div>
@@ -85,7 +86,12 @@ export default function Header() {
         >
           services
         </Link>
-        <Link to={"/events"} className="font-poppins text-[#a2724e] text-[20px] transition duration-300   hover:brightness-75  ease-in-out   lg:pr-[30px] ">Events</Link>
+        <Link
+          to={"/events"}
+          className="font-poppins text-[#a2724e] text-[20px] transition duration-300   hover:brightness-75  ease-in-out   lg:pr-[30px] "
+        >
+          Events
+        </Link>
         <Link
           to={"/login"}
           className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
