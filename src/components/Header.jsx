@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.webp";
 import loho4 from "../assets/loho4.png";
-
+import userImage from '../assets/user.svg'
 // import loogo from '../assets/loogo.webp'
 <assets />
 import {
@@ -86,12 +86,12 @@ export default function Header() {
           Services
         </Link>
         <Link to={"/events"} className="font-poppins text-[#a2724e] text-[20px] transition duration-300   hover:brightness-75  ease-in-out   lg:pr-[30px] ">Events</Link>
-        <Link
+        {/* <Link
           to={"/login"}
           className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
         >
           Sign In
-        </Link>
+        </Link> */}
 
         <Link
           className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
@@ -104,7 +104,12 @@ export default function Header() {
           className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
         >
           Start Planning
+        </Link >
+        <Link to={"/login"}>
+        <img className="w-[20px] cursor-pointer" src={userImage} />
+
         </Link>
+        
       </div>
     </header>
   );
