@@ -96,6 +96,18 @@ function Registration() {
           
           <hr className="mt-5" />
           <form onSubmit={handleSubmit} className="flex flex-col">
+          <input
+             type="text" 
+             name="name" 
+             placeholder="enter your name"
+             className="h-[40px] lg:mb-[30px] text-[20px] mt-3 border border-customBrown rounded-lg p-2 text-[#a2724e]"
+              />
+                <input
+             type="text" 
+             name="number" 
+             placeholder="enter your number"
+             className="h-[40px] lg:mb-[30px] text-[20px] mt-2 border border-customBrown rounded-lg p-2 text-[#a2724e]"
+              />
             <input
               className="h-[40px] lg:mb-[10px] text-[20px] border border-customBrown rounded-lg p-2 text-[#a2724e]"
               name="email"
@@ -112,6 +124,7 @@ function Registration() {
               type="password"
               placeholder="Enter password"
             />
+           
           </form>
           <div>
             <button
