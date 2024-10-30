@@ -11,6 +11,7 @@ export default function Login() {
     email: "",
     password: "",
   });
+  
   const [error, setError] = useState("");
   const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
   const passwordRegex =
@@ -48,17 +49,18 @@ export default function Login() {
 
     if (error === "") {
       axios
-        .post("https:localhost:3001/login", {
-          body: {
+        .post("https://algouni-students.duckdns.org:8002/event-planner/team-3/auth/login/", {
+          
             email: user.email,
             password: user.password,
-          },
+          
         })
         .then((res) => {
-          const token = res.data.token;
+          console.log(res)
+          const token = res.data;
           console.log("Login successful. Token:", token);
-          // cookieshi sheinaxe
-          // home pageze gadaamisamarte
+          localStorage.setItem("token", JSON.stringify( token))
+          
         })
         .catch((err) => {
           setError("Login failed. Please try again.");
@@ -116,9 +118,7 @@ export default function Login() {
               type="password"
               placeholder=" password"
             />
-          </form>
-          <div>
-            <button
+             <button
               className="w-[250px] flex items-center justify-center ml-2 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto text-[#a2724e]"
               style={{
                 borderWidth: "2px",
@@ -129,6 +129,9 @@ export default function Login() {
             >
               Log in
             </button>
+          </form>
+          <div>
+           
             <p>
               {" "}
               Don’t have an account?
