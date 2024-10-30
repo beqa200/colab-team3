@@ -1,19 +1,33 @@
-import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { useState, useEffect } from "react";
 
-const fetchEvents = async () => {
-  const response = await axios.get(
-    "http://localhost:5000/api/events"
-  );
-  return response.data;
-};
 
 function Events() {
-  const { data } = useQuery({
-    queryKey: ["events"],
-    queryFn: fetchEvents,
-  });
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('https://algouni-students.duckdns.org:8002/event-planner/team-3/api/event')
+      .then((response) => {
+        if (!response.ok) {
+          console.log(response.json())
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
   const handleDelete = async (id) => {
     try {
