@@ -10,6 +10,8 @@ function Registration() {
   const [user, setUser] = useState({
     email: "",
     password: "",
+    phoneNumber: "",
+    name: ""
   });
   const [error, setError] = useState("");
 
@@ -49,18 +51,18 @@ function Registration() {
 
     if (error === "") {
       axios
-        .post("https://localhost:3001/register", {
-          body: {
-            email: user.email,
-            password: user.password,
-          },
-        })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      .post("https://algouni-students.duckdns.org:8002/event-planner/team-3/auth/signup", {
+        email: user.email,
+        password: user.password,
+        name: user.name,
+        phoneNumber: user.phoneNumber,
+      })
+      .then((res) => {
+        // console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     }
   };
 
@@ -99,12 +101,16 @@ function Registration() {
           <input
              type="text" 
              name="name" 
+             onChange={inputValue}
+             value={user.name}
              placeholder="enter your name"
              className="h-[40px] lg:mb-[30px] text-[20px] mt-3 border border-customBrown rounded-lg p-2 text-[#a2724e]"
               />
                 <input
              type="text" 
-             name="number" 
+             name="phoneNumber" 
+             onChange={inputValue}
+             value={user.phoneNumber}
              placeholder="enter your number"
              className="h-[40px] lg:mb-[30px] text-[20px] mt-2 border border-customBrown rounded-lg p-2 text-[#a2724e]"
               />
@@ -124,9 +130,6 @@ function Registration() {
               type="password"
               placeholder="Enter password"
             />
-           
-          </form>
-          <div>
             <button
               className="w-[250px] flex items-center justify-center ml-2 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto text-[#a2724e]"
               style={{
@@ -138,6 +141,9 @@ function Registration() {
             >
               Sign Up
             </button>
+          </form>
+          <div>
+           
           </div>
           {/* {error && <p  className="text-red-600" >{error}</p>} */}
           <p>
