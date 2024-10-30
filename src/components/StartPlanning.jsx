@@ -4,9 +4,14 @@ import { Link } from "react-router-dom";
 
 const createEvent = async (newEvent) => {
   const response = await axios.post(
-    "http://localhost:5000/api/events",
+    "https://algouni-students.duckdns.org:8002/event-planner/team-3/api/event",
+    {
+      headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwMzE1ODQzLCJpYXQiOjE3MzAzMTIyNDMsImp0aSI6IjhiODk2OWM4OGQ5MzQ3NDZiYzRmMjljMTNiZDljODQ4IiwidXNlcl9pZCI6Mn0.0BTTLOqq6KvsRDjhnmIW--j5jNu2kEUZFXzQ7T0GwPQ`,
+      },
+    },
     newEvent
-  );
+  ); // Adjust your API endpoint as needed
   return response.data;
 };
 
