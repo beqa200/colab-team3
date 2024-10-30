@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.webp";
 import loho4 from "../assets/loho4.png";
 import userImage from '../assets/user.svg'
@@ -10,6 +10,16 @@ import {
 } from "react-router-dom";
 
 export default function Header() {
+  const [log, setLog] = useState(false)
+  
+  useEffect(() => {
+    
+      let token = localStorage.getItem("token");
+      if (token) {
+       setLog(true)
+      }
+    
+  }, []);
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -105,10 +115,11 @@ export default function Header() {
         >
           Start Planning
         </Link >
-        <Link to={"/login"}>
+         <Link to={ log ?  "/userInfo" : "/login"}>
         <img className="w-[20px] cursor-pointer" src={userImage} />
 
-        </Link>
+        </Link> 
+       
         
       </div>
     </header>

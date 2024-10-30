@@ -81,20 +81,7 @@ function Registration() {
           />
         </div>
         <div className="flex flex-col items-center mt-[60px]">
-          <div
-            className="w-[250px] lg:mb-[30px] flex justify-center items-center ml-2 mb-3 border-customBrown rounded-[40px] py-1.5 px-2.5"
-            style={{ borderWidth: "1px" }}
-          >
-            <img className="w-[25px] mr-2" src={google} alt="Google Icon" />
-            <h3 className="text-[17px]">continue with google</h3>
-          </div>
-          <div
-            className="w-[250px] lg:mb-[10px] flex items-center justify-center ml-2 border-customBrown rounded-[40px] py-1.5 px-2.5"
-            style={{ borderWidth: "1px" }}
-          >
-            <img className="w-[25px] mr-2" src={facebook} alt="Facebook Icon" />
-            <h3 className="text-[17px]">continue with facebook</h3>
-          </div>
+        
           
           <hr className="mt-5" />
           <form onSubmit={handleSubmit} className="flex flex-col">
@@ -131,7 +118,7 @@ function Registration() {
               placeholder="Enter password"
             />
             <button
-              className="w-[250px] flex items-center justify-center ml-2 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto text-[#a2724e]"
+              className="w-[250px] flex items-center justify-center ml-1 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto text-[#a2724e]"
               style={{
                 borderWidth: "2px",
                 border: "2px solid #a2724e",

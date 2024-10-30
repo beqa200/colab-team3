@@ -61,7 +61,8 @@ export default function App() {
         { path: "/events", element: <Events /> },
         {
           path:"/userInfo", element: <UserInfo/>
-        }
+        },
+        
         // {
         //   path: '/events',
         //   element: <Events />,

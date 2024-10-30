@@ -5,8 +5,10 @@ import facebook from "../assets/facebook.jpg";
 import apple from "../assets/apple.png";
 import { useState } from "react";
 import party from "../assets/party.webp";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 export default function Login() {
+  const navigate = useNavigate()
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -60,6 +62,7 @@ export default function Login() {
           const token = res.data;
           console.log("Login successful. Token:", token);
           localStorage.setItem("token", JSON.stringify( token))
+          navigate("/")
           
         })
         .catch((err) => {
@@ -84,20 +87,7 @@ export default function Login() {
       </div>
         <div class="flex flex-col  items-center mt-[60px] ">
         
-        <div
-          className="w-[250px] lg:mb-[30px]  flex justify-center items-center ml-2 mb-3 border-customBrown  rounded-[40px] py-1.5 px-2.5"
-          style={{ borderWidth: "1px" }}
-        >
-          <img className="w-[25px] mr-2" src={google} alt="Google Icon" />
-          <h3 className="text-[17px]">continue with google</h3>
-        </div>
-        <div
-          className="w-[250px] lg:mb-[10px] flex items-center  justify-center ml-2 border-customBrown rounded-[40px] py-1.5 px-2.5"
-          style={{ borderWidth: "1px" }}
-        >
-          <img className="w-[25px] mr-2" src={facebook} alt="Google Icon" />
-          <h3 className="text-[17px]">continue with facebook</h3>
-        </div>
+      
         
         <hr className="mt-5" />
         <div>
@@ -119,7 +109,7 @@ export default function Login() {
               placeholder=" password"
             />
              <button
-              className="w-[250px] flex items-center justify-center ml-2 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto text-[#a2724e]"
+              className="w-[250px] flex items-center justify-center ml-1 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto text-[#a2724e]"
               style={{
                 borderWidth: "2px",
                 border: "2px solid #a2724e",
