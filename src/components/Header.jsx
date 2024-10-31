@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import logo from "../assets/logo.webp";
-import loho4 from "../assets/loho4.png";
+
 import logo from "../assets/lg-10.png";
 
 // import loogo from '../assets/loogo.webp'
