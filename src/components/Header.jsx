@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.webp";
 import loho4 from "../assets/loho4.png";
 import userImage from '../assets/user.svg'
+import { useLogin } from "../context/LoginProvider";
 // import loogo from '../assets/loogo.webp'
 <assets />
 import {
@@ -10,16 +11,16 @@ import {
 } from "react-router-dom";
 
 export default function Header() {
-  const [log, setLog] = useState(false)
   
-  useEffect(() => {
+  const {log,setLog} = useLogin()
+  // useEffect(() => {
     
-      let token = localStorage.getItem("token");
-      if (token) {
-       setLog(true)
-      }
+  //     let token = localStorage.getItem("token");
+  //     if (token) {
+  //      setLog(true)
+  //     }
     
-  }, []);
+  // }, []);
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);

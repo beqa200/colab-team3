@@ -11,7 +11,7 @@ export default function Footer() {
     <div className="px-4 lg:px-24 py-10 bg-gray-100">
       <div className="flex flex-col lg:flex-row justify-between items-start">
         {/* Left Section: Title, Description, and Social Icons */}
-        <div className="lg:w-1/2 text-left lg:text-left text-center">
+        <div className="lg:w-1/2 lg:text-left text-center">
           <h1 className="text-[40px] text-[#a2724e] font-poppins font-bold">
             The Effortless Wedding
           </h1>
