@@ -6,8 +6,10 @@ import apple from "../assets/apple.png";
 import { useState } from "react";
 import party from "../assets/party.webp";
 import { Link, useNavigate } from "react-router-dom";
-
+import LoginProvider from "../context/LoginProvider";
+import { useLogin } from "../context/LoginProvider";
 export default function Login() {
+  const {setLog } = useLogin()
   const navigate = useNavigate()
   const [user, setUser] = useState({
     email: "",
@@ -62,6 +64,7 @@ export default function Login() {
           const token = res.data;
           console.log("Login successful. Token:", token);
           localStorage.setItem("token", JSON.stringify( token))
+          setLog(true)
           navigate("/")
           
         })
