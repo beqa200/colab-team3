@@ -1,12 +1,17 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import google from "../assets/google.webp";
 import facebook from "../assets/facebook.jpg";
 import apple from "../assets/apple.png";
 import eventImg from "../assets/eventImg.webp";
-
+// import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
+
 function Registration() {
+  const navigate = useNavigate()
+
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -59,6 +64,7 @@ function Registration() {
       })
       .then((res) => {
         // console.log(res);
+        navigate('/login')
       })
       .catch((err) => {
         console.log(err);

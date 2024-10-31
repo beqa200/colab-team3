@@ -4,13 +4,13 @@ const context = createContext({ log: false, setLog: ()=>{} })
 
 export default function LoginProvider({children}) {
 
-    const [log, setLog] = useState(false)
-    useEffect(()=>{
-        const tokenStr = localStorage.getItem("token");
-        if (tokenStr) {
-          setLog(true);
-        }
-    })
+    const [log, setLog] = useState( localStorage.getItem('token') ? true : false )
+    // useEffect(()=>{
+    //     const tokenStr = localStorage.getItem("token");
+    //     if (tokenStr) {
+    //       setLog(true);
+    //     }
+    // })
   return (
    <context.Provider value={ {log, setLog} }>
     {children}
