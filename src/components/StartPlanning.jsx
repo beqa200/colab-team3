@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const createEvent = async (newEvent) => {
+
   let token = localStorage.getItem("token");
   if (token) {
     token = JSON.parse(token)
@@ -18,6 +19,7 @@ const createEvent = async (newEvent) => {
     ); // Adjust your API endpoint as needed
     return response.data;
   }
+
 };
 
 function CreateEvent() {

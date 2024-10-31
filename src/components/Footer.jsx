@@ -37,10 +37,10 @@ export default function Footer() {
             />
           </div>
         </div>
-        <div className="lg:w-1/2 flex flex-col justify-center items-center  mt-10 lg:mt-[100px] lg:ml-[300px] lg:text-right">
+        <div className="lg:w-1/2 flex flex-col justify-center items-center justify-center mt-10 lg:mt-[100px] lg:ml-[300px] lg:text-right">
           <div className="flex flex-col lg:flex-row lg:space-x-10 lg:justify-center items-center justify-center">
-            <div className="flex flex-col space-y-3 mb-6 lg:mb-0">
-              <Link className="text-[#a2724e] text-lg hover:underline font-poppins">
+            <div className="flex flex-col space-y-3 mb-6 lg:mb-0 items-center ">
+              <Link className="text-[#a2724e] text-lg hover:underline font-poppins text-center w-[100%]">
                 Home
               </Link>
               <Link className="text-[#a2724e] text-lg hover:underline font-poppins">
