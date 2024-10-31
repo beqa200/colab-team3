@@ -3,11 +3,23 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const createEvent = async (newEvent) => {
-  const response = await axios.post(
-    "http://algouni-students.duckdns.org:8002/event-planner/team-3/auth/api/event",
-    newEvent
-  );
-  return response.data;
+
+  let token = localStorage.getItem("token");
+  if (token) {
+    token = JSON.parse(token)
+    const response = await axios.post(
+      "https://algouni-students.duckdns.org:8002/event-planner/team-3/api/event",
+      newEvent,
+      {
+        headers: {
+          Authorization: `Bearer ${token.access}`,
+        },
+      },
+     
+    ); // Adjust your API endpoint as needed
+    return response.data;
+  }
+
 };
 
 function CreateEvent() {
@@ -41,10 +53,7 @@ function CreateEvent() {
       });
       console.log("success");
     } catch (error) {
-      console.error(
-        "Error creating event:",
-        error
-      );
+      console.error("Error creating event:", error);
     }
   };
 

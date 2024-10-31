@@ -10,6 +10,8 @@ function Registration() {
   const [user, setUser] = useState({
     email: "",
     password: "",
+    phoneNumber: "",
+    name: ""
   });
   const [error, setError] = useState("");
 
@@ -49,18 +51,18 @@ function Registration() {
 
     if (error === "") {
       axios
-        .post("https://localhost:3001/register", {
-          body: {
-            email: user.email,
-            password: user.password,
-          },
-        })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      .post("https://algouni-students.duckdns.org:8002/event-planner/team-3/auth/signup", {
+        email: user.email,
+        password: user.password,
+        name: user.name,
+        phoneNumber: user.phoneNumber,
+      })
+      .then((res) => {
+        // console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     }
   };
 
@@ -79,23 +81,26 @@ function Registration() {
           />
         </div>
         <div className="flex flex-col items-center mt-[60px]">
-          <div
-            className="w-[250px] lg:mb-[30px] flex justify-center items-center ml-2 mb-3 border-customBrown rounded-[40px] py-1.5 px-2.5"
-            style={{ borderWidth: "1px" }}
-          >
-            <img className="w-[25px] mr-2" src={google} alt="Google Icon" />
-            <h3 className="text-[17px]">continue with google</h3>
-          </div>
-          <div
-            className="w-[250px] lg:mb-[10px] flex items-center justify-center ml-2 border-customBrown rounded-[40px] py-1.5 px-2.5"
-            style={{ borderWidth: "1px" }}
-          >
-            <img className="w-[25px] mr-2" src={facebook} alt="Facebook Icon" />
-            <h3 className="text-[17px]">continue with facebook</h3>
-          </div>
+        
           
           <hr className="mt-5" />
           <form onSubmit={handleSubmit} className="flex flex-col">
+          <input
+             type="text" 
+             name="name" 
+             onChange={inputValue}
+             value={user.name}
+             placeholder="enter your name"
+             className="h-[40px] lg:mb-[30px] text-[20px] mt-3 border border-customBrown rounded-lg p-2 text-[#a2724e]"
+              />
+                <input
+             type="text" 
+             name="phoneNumber" 
+             onChange={inputValue}
+             value={user.phoneNumber}
+             placeholder="enter your number"
+             className="h-[40px] lg:mb-[30px] text-[20px] mt-2 border border-customBrown rounded-lg p-2 text-[#a2724e]"
+              />
             <input
               className="h-[40px] lg:mb-[10px] text-[20px] border border-customBrown rounded-lg p-2 text-[#a2724e]"
               name="email"
@@ -112,10 +117,8 @@ function Registration() {
               type="password"
               placeholder="Enter password"
             />
-          </form>
-          <div>
             <button
-              className="w-[250px] flex items-center justify-center ml-2 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto text-[#a2724e]"
+              className="w-[250px] flex items-center justify-center ml-1 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto text-[#a2724e]"
               style={{
                 borderWidth: "2px",
                 border: "2px solid #a2724e",
@@ -125,6 +128,9 @@ function Registration() {
             >
               Sign Up
             </button>
+          </form>
+          <div>
+           
           </div>
           {/* {error && <p  className="text-red-600" >{error}</p>} */}
           <p>

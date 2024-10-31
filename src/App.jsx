@@ -16,6 +16,7 @@ import Contact from "./components/Contact";
 import StartPlanning from "./components/StartPlanning";
 import Events from "./components/Events";
 import Footer from "./components/Footer";
+import UserInfo from "./components/UserInfo";
 // Layout component that includes the Header
 function Layout() {
   return (
@@ -58,6 +59,10 @@ export default function App() {
           element: <StartPlanning />,
         },
         { path: "/events", element: <Events /> },
+        {
+          path:"/userInfo", element: <UserInfo/>
+        },
+        
         // {
         //   path: '/events',
         //   element: <Events />,

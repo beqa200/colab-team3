@@ -5,12 +5,15 @@ import facebook from "../assets/facebook.jpg";
 import apple from "../assets/apple.png";
 import { useState } from "react";
 import party from "../assets/party.webp";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 export default function Login() {
+  const navigate = useNavigate()
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
+  
   const [error, setError] = useState("");
   const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
   const passwordRegex =
@@ -48,17 +51,19 @@ export default function Login() {
 
     if (error === "") {
       axios
-        .post("https:localhost:3001/login", {
-          body: {
+        .post("https://algouni-students.duckdns.org:8002/event-planner/team-3/auth/login/", {
+          
             email: user.email,
             password: user.password,
-          },
+          
         })
         .then((res) => {
-          const token = res.data.token;
+          console.log(res)
+          const token = res.data;
           console.log("Login successful. Token:", token);
-          // cookieshi sheinaxe
-          // home pageze gadaamisamarte
+          localStorage.setItem("token", JSON.stringify( token))
+          navigate("/")
+          
         })
         .catch((err) => {
           setError("Login failed. Please try again.");
@@ -82,20 +87,7 @@ export default function Login() {
       </div>
         <div class="flex flex-col  items-center mt-[60px] ">
         
-        <div
-          className="w-[250px] lg:mb-[30px]  flex justify-center items-center ml-2 mb-3 border-customBrown  rounded-[40px] py-1.5 px-2.5"
-          style={{ borderWidth: "1px" }}
-        >
-          <img className="w-[25px] mr-2" src={google} alt="Google Icon" />
-          <h3 className="text-[17px]">continue with google</h3>
-        </div>
-        <div
-          className="w-[250px] lg:mb-[10px] flex items-center  justify-center ml-2 border-customBrown rounded-[40px] py-1.5 px-2.5"
-          style={{ borderWidth: "1px" }}
-        >
-          <img className="w-[25px] mr-2" src={facebook} alt="Google Icon" />
-          <h3 className="text-[17px]">continue with facebook</h3>
-        </div>
+      
         
         <hr className="mt-5" />
         <div>
@@ -116,10 +108,8 @@ export default function Login() {
               type="password"
               placeholder=" password"
             />
-          </form>
-          <div>
-            <button
-              className="w-[250px] flex items-center justify-center ml-2 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto text-[#a2724e]"
+             <button
+              className="w-[250px] flex items-center justify-center ml-1 border-black rounded-[40px] py-1.5 px-2.5 mb-5 mx-auto text-[#a2724e]"
               style={{
                 borderWidth: "2px",
                 border: "2px solid #a2724e",
@@ -129,6 +119,9 @@ export default function Login() {
             >
               Log in
             </button>
+          </form>
+          <div>
+           
             <p>
               {" "}
               Don’t have an account?
