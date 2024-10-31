@@ -3,16 +3,21 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const createEvent = async (newEvent) => {
-  const response = await axios.post(
-    "https://algouni-students.duckdns.org:8002/event-planner/team-3/api/event",
-    {
-      headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwMzE1ODQzLCJpYXQiOjE3MzAzMTIyNDMsImp0aSI6IjhiODk2OWM4OGQ5MzQ3NDZiYzRmMjljMTNiZDljODQ4IiwidXNlcl9pZCI6Mn0.0BTTLOqq6KvsRDjhnmIW--j5jNu2kEUZFXzQ7T0GwPQ`,
+  let token = localStorage.getItem("token");
+  if (token) {
+    token = JSON.parse(token)
+    const response = await axios.post(
+      "https://algouni-students.duckdns.org:8002/event-planner/team-3/api/event",
+      newEvent,
+      {
+        headers: {
+          Authorization: `Bearer ${token.access}`,
+        },
       },
-    },
-    newEvent
-  ); // Adjust your API endpoint as needed
-  return response.data;
+     
+    ); // Adjust your API endpoint as needed
+    return response.data;
+  }
 };
 
 function CreateEvent() {
@@ -46,10 +51,7 @@ function CreateEvent() {
       });
       console.log("success");
     } catch (error) {
-      console.error(
-        "Error creating event:",
-        error
-      );
+      console.error("Error creating event:", error);
     }
   };
 
@@ -57,10 +59,9 @@ function CreateEvent() {
     <div className="p-4">
       <div className="text-center mb-6 hidden md:block">
         <h2 className="text-2xl font-bold font-libre  md:text-3xl lg:text-4xl xl:text-[40px] text-[#a2724e]">
-          Start  Planning
+          Start Planning
         </h2>
-        
-      </div> 
+      </div>
       <div className="flex flex-col md:flex-row items-center justify-center gap-6 lg:gap-[50px]">
         <div className="w-full lg:w-[45%] md:w-[50%] md:mt-[px] xl:mt-[40px]">
           <img
@@ -98,7 +99,7 @@ function CreateEvent() {
               name="eventName"
               value={newEvent.eventName}
               onChange={handleInputChange}
-              placeholder="Event Name" 
+              placeholder="Event Name"
               required
               className="  placeholder-[#a2724e] text-[#a2724e] block w-full bg-transparent border-b-2 border-gray-300 focus:outline-none focus:border-blue-500 transition-colors duration-300"
             />
