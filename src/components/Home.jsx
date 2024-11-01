@@ -6,7 +6,7 @@ import loho4 from "../assets/lg-12.jpg";
 import mainPoto from "../assets/mainpoto.jpg";
 import mainPoto2 from "../assets/mainphoto2.jpg";
 import mainPoto3 from "../assets/mainphoto3.jpg";
-import birthdayPhoto from "../assets/birthdayPoto.jpg";
+import birthdayPhoto from "../assets/birthdaypoto.jpg";
 import conferrencePoto from "../assets/conferrencepoto.jpg";
 
 import weddingImage from "../assets/wedding.jpg";

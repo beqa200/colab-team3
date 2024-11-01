@@ -1,8 +1,12 @@
 import logo from "../assets/lg-10.png";
-import React, { useEffect, useState } from "react";
+import React, {
+  useEffect,
+  useState,
+} from "react";
 import loho4 from "../assets/loho4.png";
-import userImage from '../assets/user.svg'
+import userImage from "../assets/user.svg";
 import { useLogin } from "../context/LoginProvider";
+
 // import loogo from '../assets/loogo.webp'
 <assets />;
 import {
@@ -11,16 +15,49 @@ import {
 } from "react-router-dom";
 
 export default function Header() {
-  
-  const {log,setLog} = useLogin()
-  // useEffect(() => {
-    
-  //     let token = localStorage.getItem("token");
-  //     if (token) {
-  //      setLog(true)
-  //     }
-    
-  // }, []);
+  const { log, setLog, setUser } = useLogin();
+
+  useEffect(() => {
+    const handleRsvp = async () => {
+      try {
+        const tokenStr =
+          localStorage.getItem("token");
+        if (tokenStr) {
+          const token = JSON.parse(tokenStr);
+          const response = await fetch(
+            `https://algouni-students.duckdns.org:8002/event-planner/team-3/auth/signup`,
+            {
+              method: "GET",
+              headers: {
+                Authorization: `Bearer ${token.access}`,
+              },
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(
+              "Error deleting data"
+            );
+          }
+          if (response.ok) {
+            const data = await response.json();
+            localStorage.setItem(
+              "user",
+              JSON.stringify(data)
+            );
+            setUser(data);
+          }
+          console.log("Event deleted");
+        }
+      } catch (error) {
+        console.error(
+          "Error deleting event:",
+          error
+        );
+      }
+    };
+    handleRsvp();
+  }, []);
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -97,9 +134,12 @@ export default function Header() {
           Services
         </Link>
 
- 
-
-        <Link to={"/events"} className="font-poppins text-[#a2724e] text-[20px] transition duration-300   hover:brightness-75  ease-in-out   lg:pr-[30px] ">Events</Link>
+        <Link
+          to={"/events"}
+          className="font-poppins text-[#a2724e] text-[20px] transition duration-300   hover:brightness-75  ease-in-out   lg:pr-[30px] "
+        >
+          Events
+        </Link>
         {/* <Link
           to={"/login"}
           className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
@@ -118,13 +158,13 @@ export default function Header() {
           className="text-[#a2724e] font-poppins text-[20px] transition duration-300   hover:brightness-75  ease-in-out  lg:pr-[30px]"
         >
           Start Planning
-        </Link >
-         <Link to={ log ?  "/userInfo" : "/login"}>
-        <img className="w-[20px] cursor-pointer" src={userImage} />
-
-        </Link> 
-       
-        
+        </Link>
+        <Link to={log ? "/userInfo" : "/login"}>
+          <img
+            className="w-[20px] cursor-pointer"
+            src={userImage}
+          />
+        </Link>
       </div>
     </header>
   );
