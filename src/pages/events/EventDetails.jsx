@@ -1,26 +1,56 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Pie } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
 
 // Register Chart.js elements
 Chart.register(ArcElement);
 
-const fetchEventById = async (id) => {
-  const response = await axios.get(
-    `http://localhost:5000/api/events/${id}`
-  );
-  return response.data;
-};
-
 function EventDetails() {
   const { id } = useParams();
-  const { data: event, isLoading } = useQuery({
-    queryKey: ["event", id],
-    queryFn: () => fetchEventById(id),
-  });
+  const [rsvpStats, setRsvpStats] = useState();
+  const [participants, setParticipants] =
+    useState();
+  const [event, setEvent] = useState();
+  useEffect(() => {
+    const fetchEventById = async (id) => {
+      const response = await fetch(
+        `https://algouni-students.duckdns.org:8002/event-planner/team-3/api/event/${id}`
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setEvent(data);
+      }
+      console.log("niga");
+    };
+    const fetchRsvpById = async (id) => {
+      const response = await fetch(
+        `https://algouni-students.duckdns.org:8002/event-planner/team-3/api/rsvp?event_id=${id}`
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setParticipants(
+          data?.map((rsvp) => rsvp.accepted)
+        );
+      }
+      console.log("niga");
+    };
+    const fetchInfoById = async (id) => {
+      const response = await fetch(
+        `https://algouni-students.duckdns.org:8002/event-planner/team-3/api/event-info?event_id=${id}`
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setRsvpStats(data);
+      }
+      console.log("niga");
+    };
+    fetchEventById(id);
+    fetchRsvpById(id);
+    fetchInfoById(id);
+  }, []);
 
   const [participantInfo, setParticipantInfo] =
     useState("");
@@ -78,49 +108,59 @@ function EventDetails() {
     return stats;
   };
 
-  if (isLoading) {
-    return <p>Loading event details...</p>;
-  }
+  //if (isLoading) {
+  //  return <p>Loading event details...</p>;
+  //}
 
   if (!event) {
     return <p>Event not found</p>;
   }
 
   // Extract RSVP statistics
-  const rsvpStats = event.participants
-    ? calculateRSVPStats(event.participants)
-    : { confirmed: 0, pending: 0, rejected: 0 };
-
+  //const rsvpStats = event.participants
+  // ? calculateRSVPStats(event.participants)
+  ///: { confirmed: 0, pending: 0, rejected: 0 };
+  //
   // Prepare data for the RSVP statistics chart
-  const chartData = {
-    labels: ["Confirmed", "Pending", "Rejected"],
-    datasets: [
-      {
-        data: [
-          rsvpStats.confirmed,
-          rsvpStats.pending,
-          rsvpStats.rejected,
+  const chartData = rsvpStats
+    ? {
+        labels: [
+          "Confirmed",
+          "Pending",
+          "Rejected",
         ],
-        backgroundColor: [
-          "#36A2EB",
-          "#FFCE56",
-          "#FF6384",
+        datasets: [
+          {
+            data: [
+              rsvpStats.total_accepted_rsvps,
+              rsvpStats.total_rsvp -
+                (rsvpStats.total_accepted_rsvps +
+                  rsvpStats.total_rejected_rsvps),
+              rsvpStats.total_rejected_rsvps,
+            ],
+            backgroundColor: [
+              "#36A2EB",
+              "#FFCE56",
+              "#FF6384",
+            ],
+            hoverBackgroundColor: [
+              "#36A2EB",
+              "#FFCE56",
+              "#FF6384",
+            ],
+          },
         ],
-        hoverBackgroundColor: [
-          "#36A2EB",
-          "#FFCE56",
-          "#FF6384",
-        ],
-      },
-    ],
-  };
+      }
+    : {};
 
   // Only show chart if there are RSVP entries, otherwise show a message
-  const chartIsEmpty =
-    rsvpStats.confirmed === 0 &&
-    rsvpStats.pending === 0 &&
-    rsvpStats.rejected === 0;
-
+  //  const chartIsEmpty =
+  //  rsvpStats.confirmed === 0 &&
+  //rsvpStats.pending === 0 &&
+  // rsvpStats.rejected === 0;
+  if (!rsvpStats) {
+    return <div>Loading</div>;
+  }
   return (
     <div className="p-4 bg-gray-100 rounded-lg shadow-md w-full md:w-[80%] lg:w-[60%] mx-auto">
       <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
@@ -148,13 +188,7 @@ function EventDetails() {
           RSVP Statistics
         </h3>
         <div className="w-[80%] mx-auto">
-          {chartIsEmpty ? (
-            <p className="text-center text-gray-600">
-              No RSVP data available yet.
-            </p>
-          ) : (
-            <Pie data={chartData} />
-          )}
+          <Pie data={chartData} />
         </div>
       </div>
 
@@ -162,15 +196,15 @@ function EventDetails() {
         <h3 className="text-lg font-semibold text-gray-700 mb-2 text-[18px] md:text-[20px]">
           Participants
         </h3>
-        {event.participants &&
-        event.participants.length > 0 ? (
+        {participants &&
+        participants.length > 0 ? (
           <ul className="list-disc list-inside text-gray-600 text-[16px]">
-            {event.participants.map(
+            {participants?.map(
               (participant, index) => (
                 <li key={index}>
                   {participant.email ||
-                    participant.username}{" "}
-                  - RSVP: {participant.rsvp}
+                    participant.name}{" "}
+                  - RSVP: {participant.accepted}
                 </li>
               )
             )}

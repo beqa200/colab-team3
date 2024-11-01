@@ -17,13 +17,14 @@ import StartPlanning from "./components/StartPlanning";
 import Events from "./components/Events";
 import Footer from "./components/Footer";
 import UserInfo from "./components/UserInfo";
+import EventDetails from "./pages/events/EventDetails";
+
 // Layout component that includes the Header
 function Layout() {
   return (
     <>
       <Header />
-      <Outlet />{" "}
-      <Footer/>
+      <Outlet /> <Footer />
       {/* This will render the routed component below the Header */}
     </>
   );
@@ -60,9 +61,14 @@ export default function App() {
         },
         { path: "/events", element: <Events /> },
         {
-          path:"/userInfo", element: <UserInfo/>
+          path: "/userInfo",
+          element: <UserInfo />,
         },
-        
+        {
+          path: "/eventDetails/:id",
+          element: <EventDetails />,
+        },
+
         // {
         //   path: '/events',
         //   element: <Events />,
