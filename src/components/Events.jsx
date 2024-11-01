@@ -18,7 +18,6 @@ function Events() {
         if (!response.ok) {
           console.log(response.json());
           throw new Error("Network response was not ok");
-
         }
         return response.json();
       })
@@ -37,9 +36,22 @@ function Events() {
     }
   }, []);
 
-
-  if (loading) return  <div className="flex items-center justify-center min-h-screen"> <p className="text-lg text-center  text-[#a2724e] ">Loading...</p> </div>;
-  if (error) return  <div className="flex items-center justify-center min-h-screen"> <p className="text-lg text-center  text-[#a2724e] ">Error {error.message}</p> </div>;
+  if (loading)
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        {" "}
+        <p className="text-lg text-center  text-[#a2724e] ">Loading...</p>{" "}
+      </div>
+    );
+  if (error)
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        {" "}
+        <p className="text-lg text-center  text-[#a2724e] ">
+          Error {error.message}
+        </p>{" "}
+      </div>
+    );
 
   const handleDelete = async (id) => {
     console.log("Deleting event with ID:", id);
@@ -73,7 +85,7 @@ function Events() {
       }
 
       console.log("Event deleted successfully");
-      window.location.reload()
+      window.location.reload();
       // Optional: Notify the user or refresh data here
     } catch (error) {
       console.error("Error deleting event:", error.message);
@@ -82,8 +94,7 @@ function Events() {
   };
   const handleRsvp = async (id) => {
     try {
-      const tokenStr =
-        localStorage.getItem("token");
+      const tokenStr = localStorage.getItem("token");
       if (tokenStr) {
         const token = JSON.parse(tokenStr);
         const response = await fetch(
@@ -109,10 +120,7 @@ function Events() {
         console.log("Event deleted");
       }
     } catch (error) {
-      console.error(
-        "Error deleting event:",
-        error
-      );
+      console.error("Error deleting event:", error);
     }
   };
   console.log(user);
@@ -150,48 +158,29 @@ function Events() {
               <p className="text-lg font-bold mb-4 text-left text-[#a2724e]">
                 Description: {event.description}
               </p>
-
-              <Link to={`/updateEvent/${event.id}`}>
-                <button className="w-full bg-[#a2724e] text-white py-2 rounded-lg hover:bg-[#7d4a30] transition duration-300">
-                  Update
-                </button>
-              </Link>
-
-              <Link to={`/event/${event.id}`}>
-                <button
-                  style={{
-                    borderWidth: "2px",
-                    border: "2px solid #a2724e",
-                    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-                  }}
-                  className="w-full bg-white text-[#a2724e] py-2 mt-2 rounded-lg hover:underline transition duration-300"
-                >
-                  More Details
-                </button>
-              </Link>
-
-              <button
-                className="w-full bg-[#a2724e] text-white py-2 mt-2 rounded-lg hover:bg-[#7d4a30] transition duration-300"
-                onClick={() => handleDelete(event.id)}
-              >
-                Delete
-              </button>
               {user != null ? (
                 user.id === event.organizer.id ? (
                   <>
-                    {" "}
-                    <Link
-                      to={`/eventDetails/${event.id}`}
-                    >
-                      <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+                    <Link to={`/updateEvent/${event.id}`}>
+                      <button className="w-full bg-[#a2724e] text-white py-2 rounded-lg hover:bg-[#7d4a30] transition duration-300">
+                        Update
+                      </button>
+                    </Link>{" "}
+                    <Link to={`/eventDetails/${event.id}`}>
+                      <button
+                        style={{
+                          borderWidth: "2px",
+                          border: "2px solid #a2724e",
+                          boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                        }}
+                        className="w-full bg-white text-[#a2724e] py-2 mt-2 rounded-lg hover:underline transition duration-300"
+                      >
                         More Details
                       </button>
                     </Link>
                     <button
-                      className="w-full bg-red-500 text-white py-2 mt-2 rounded-lg hover:bg-red-600 transition duration-300"
-                      onClick={() =>
-                        handleDelete(event.id)
-                      }
+                      className="w-full bg-[#a2724e] text-white py-2 mt-2 rounded-lg hover:bg-[#7d4a30] transition duration-300"
+                      onClick={() => handleDelete(event.id)}
                     >
                       Delete
                     </button>
@@ -199,9 +188,7 @@ function Events() {
                 ) : (
                   <button
                     className="w-full bg-red-500 text-white py-2 mt-2 rounded-lg hover:bg-red-600 transition duration-300"
-                    onClick={() =>
-                      handleRsvp(event.id)
-                    }
+                    onClick={() => handleRsvp(event.id)}
                   >
                     rsvp
                   </button>
@@ -209,7 +196,6 @@ function Events() {
               ) : (
                 "ngg"
               )}
-
             </div>
           ))
         ) : (
