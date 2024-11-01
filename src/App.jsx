@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 // import Events from './pages/events/'
 // import CreateEvent from './CreateEvent';
-// import UpdateEvent from './UpdateEvent';
+import UpdateEvent from './pages/events/UpdateEvent'
 import Services from "./components/Services";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
@@ -71,10 +71,10 @@ export default function App() {
         //   path: '/createEvent',
         //   element: <CreateEvent />,
         // },
-        // {
-        //   path: '/updateEvent/:id',
-        //   element: <UpdateEvent />,
-        // },
+        {
+          path: '/updateEvent/:id',
+          element: <UpdateEvent />,
+        },
       ],
     },
   ]);
