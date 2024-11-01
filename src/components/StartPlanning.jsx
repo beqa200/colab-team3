@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 
 const createEvent = async (newEvent) => {
+  
 
   let token = localStorage.getItem("token");
   if (token) {
@@ -31,6 +33,7 @@ function CreateEvent() {
     description: "",
     guestsAmount: 0,
   });
+  const navigate = useNavigate()
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -52,6 +55,7 @@ function CreateEvent() {
         guestsAmount: 0,
       });
       console.log("success");
+      navigate("/events")
     } catch (error) {
       console.error("Error creating event:", error);
     }
