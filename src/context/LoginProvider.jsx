@@ -23,6 +23,7 @@ export default function LoginProvider({
       setLog(true);
     }
   });
+  
   return (
     <context.Provider
       value={{ log, setLog, user, setUser }}
